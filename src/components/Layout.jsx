@@ -80,14 +80,14 @@ const Layout = ({ children }) => {
                     <div className="footer-section">
                         <h4>Connect</h4>
                         <div className="social-links">
-                            <a href="#" target="_blank" rel="noopener noreferrer"><Github size={20} /></a>
-                            <a href="#" target="_blank" rel="noopener noreferrer"><Linkedin size={20} /></a>
-                            <a href="#" target="_blank" rel="noopener noreferrer"><Instagram size={20} /></a>
-                            <a href="mailto:vrinda@example.com"><Mail size={20} /></a>
+                            <a href="https://github.com/vrindagoyal" target="_blank" rel="noopener noreferrer"><Github size={20} /></a>
+                            <a href="https://www.linkedin.com/in/vrinda-goyal-02345935b/" target="_blank" rel="noopener noreferrer"><Linkedin size={20} /></a>
+                            <a href="https://www.instagram.com/lingualoom_learning/" target="_blank" rel="noopener noreferrer"><Instagram size={20} /></a>
+                            <a href="mailto:goyalvrinda71@gmail.com"><Mail size={20} /></a>
                         </div>
                     </div>
                     <div className="footer-section">
-                        <p>&copy; {new Date().getFullYear()} Vrinda Goyal. Made with 🎀</p>
+                        <p>&copy; {new Date().getFullYear()} Vrinda Goyal. Made with 🎀 by TheWhales India</p>
                     </div>
                 </div>
             </footer>

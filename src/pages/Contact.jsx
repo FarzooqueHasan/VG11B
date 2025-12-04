@@ -27,21 +27,21 @@ const Contact = () => {
                                     <Mail className="info-icon" />
                                     <div>
                                         <h4>Email</h4>
-                                        <a href="mailto:vrinda@example.com">vrinda@example.com</a>
+                                        <a href="mailto:goyalvrinda71@gmail.com">goyalvrinda71@gmail.com</a>
                                     </div>
                                 </div>
                                 <div className="info-item">
                                     <Phone className="info-icon" />
                                     <div>
                                         <h4>Phone</h4>
-                                        <p>+91 XXXXX XXXXX</p>
+                                        <p>+91 84399 47891</p>
                                     </div>
                                 </div>
                                 <div className="info-item">
                                     <MapPin className="info-icon" />
                                     <div>
                                         <h4>Location</h4>
-                                        <p>India</p>
+                                        <p>Delhi, India</p>
                                     </div>
                                 </div>
                             </div>
