@@ -1,0 +1,20 @@
+.click-sparkle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    font-size: 1.5rem;
+    animation: sparkle-anim 0.8s ease-out forwards;
+    transform-origin: center;
+}
+
+@keyframes sparkle-anim {
+    0% {
+        transform: translate(-50%, -50%) scale(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -100px) scale(1.5) rotate(180deg);
+        opacity: 0;
+    }
+}

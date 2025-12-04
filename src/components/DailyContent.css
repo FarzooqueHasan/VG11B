@@ -1,0 +1,51 @@
+.daily-content {
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.daily-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.daily-quote {
+    margin: 0;
+}
+
+.daily-quote p {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.daily-quote footer {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.quote-indicators {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-border);
+    cursor: none;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: var(--color-primary);
+    transform: scale(1.3);
+}
