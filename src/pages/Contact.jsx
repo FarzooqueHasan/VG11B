@@ -9,10 +9,10 @@ const Contact = () => {
             <div className="page-header">
                 <div className="container">
                     <h1 className="page-title">
-                        <span className="text-gradient">Get in Touch</span>
+                        <span className="text-gradient">ESTABLISH COMMS</span>
                     </h1>
                     <p className="page-description">
-                        I'd love to hear from you! Whether you want to discuss languages, social service, or just say hello.
+                        SECURE LINE OPEN. TRANSMIT QUERIES RELATING TO LINGUISTICS, SOCIAL OPS, OR GENERAL BRIEFINGS.
                     </p>
                 </div>
             </div>
@@ -20,27 +20,27 @@ const Contact = () => {
             <section className="section">
                 <div className="container contact-container">
                     <div className="contact-info">
-                        <Card className="info-card">
-                            <h3>Contact Information</h3>
+                        <Card className="info-card panel">
+                            <h3>COMMS CHANNELS</h3>
                             <div className="info-items">
                                 <div className="info-item">
                                     <Mail className="info-icon" />
                                     <div>
-                                        <h4>Email</h4>
+                                        <h4>ELECTRONIC MAIL</h4>
                                         <a href="mailto:goyalvrinda71@gmail.com">goyalvrinda71@gmail.com</a>
                                     </div>
                                 </div>
                                 <div className="info-item">
                                     <Phone className="info-icon" />
                                     <div>
-                                        <h4>Phone</h4>
+                                        <h4>LANDLINE / CELL</h4>
                                         <p>+91 84399 47891</p>
                                     </div>
                                 </div>
                                 <div className="info-item">
                                     <MapPin className="info-icon" />
                                     <div>
-                                        <h4>Location</h4>
+                                        <h4>BASE COORDINATES</h4>
                                         <p>Delhi, India</p>
                                     </div>
                                 </div>
@@ -49,23 +49,23 @@ const Contact = () => {
                     </div>
 
                     <div className="contact-form-section">
-                        <Card className="form-card">
-                            <h3>Send a Message</h3>
+                        <Card className="form-card panel terminal-form">
+                            <h3>ENCRYPTED TRANSMISSION</h3>
                             <form className="contact-form">
                                 <div className="form-group">
-                                    <label htmlFor="name">Name</label>
-                                    <input type="text" id="name" placeholder="Your name" />
+                                    <label htmlFor="name">IDENTIFIER (NAME)</label>
+                                    <input type="text" id="name" placeholder="ENTER ID..." />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="email">Email</label>
-                                    <input type="email" id="email" placeholder="your.email@example.com" />
+                                    <label htmlFor="email">RELAY ADDRESS (EMAIL)</label>
+                                    <input type="email" id="email" placeholder="USER@NO-REPLY.COM" />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="message">Message</label>
-                                    <textarea id="message" rows="5" placeholder="Your message..."></textarea>
+                                    <label htmlFor="message">PAYLOAD (MESSAGE)</label>
+                                    <textarea id="message" rows="5" placeholder="TYPE MESSAGE HERE..."></textarea>
                                 </div>
-                                <button type="submit" className="btn btn-primary">
-                                    Send Message 💌
+                                <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
+                                    TRANSMIT DATA
                                 </button>
                             </form>
                         </Card>

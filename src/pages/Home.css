@@ -8,7 +8,20 @@
     display: flex;
     align-items: center;
     padding: 2rem 0;
-    background: linear-gradient(135deg, rgba(255, 182, 217, 0.1) 0%, rgba(255, 240, 245, 0.5) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Effect for Hero */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 50%, rgba(14, 165, 233, 0.1), transparent 50%);
+    z-index: 0;
 }
 
 .hero-container {
@@ -16,19 +29,25 @@
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-greeting {
     color: var(--color-primary);
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    font-weight: 500;
+    font-weight: 700;
+    font-family: var(--font-display);
+    letter-spacing: 2px;
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 4.5rem;
     margin-bottom: 1rem;
     color: var(--color-heading);
+    text-transform: uppercase;
+    line-height: 1;
 }
 
 .hero-subtitle {
@@ -36,6 +55,7 @@
     color: var(--color-text);
     margin-bottom: 1.5rem;
     font-weight: 600;
+    font-family: var(--font-sans);
 }
 
 .hero-description {
@@ -44,6 +64,8 @@
     line-height: 1.8;
     margin-bottom: 2rem;
     max-width: 500px;
+    border-left: 3px solid var(--color-primary);
+    padding-left: 1rem;
 }
 
 .hero-actions {
@@ -52,65 +74,84 @@
     flex-wrap: wrap;
 }
 
+/* Radar Visual Replacement */
 .hero-visual {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .profile-wrapper {
     position: relative;
-    width: 350px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.profile-glow {
+/* Radar Rings */
+.profile-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background:
+        radial-gradient(transparent 95%, var(--color-secondary) 100%),
+        repeating-radial-gradient(transparent 0, transparent 49px, rgba(14, 165, 233, 0.1) 50px);
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.2);
+    position: relative;
+    border: 2px solid var(--color-secondary);
+}
+
+.profile-placeholder::before {
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(255, 105, 180, 0.3), transparent 70%);
+    width: 10px;
+    height: 10px;
+    background: var(--color-primary);
     border-radius: 50%;
-    animation: pulse-glow 3s ease-in-out infinite;
+    box-shadow: 0 0 10px var(--color-primary);
 }
 
-.profile-placeholder {
-    position: relative;
+/* Radar Sweep */
+.profile-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 5px solid var(--color-surface);
-    box-shadow: var(--shadow-bow);
+    background: conic-gradient(from 0deg, transparent 0deg, rgba(14, 165, 233, 0.4) 60deg, transparent 60.1deg);
+    animation: radarSpin 4s linear infinite;
 }
 
 .profile-emoji {
-    font-size: 8rem;
+    display: none;
+    /* Hide emoji */
 }
 
-@keyframes pulse-glow {
-
-    0%,
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.5;
+@keyframes radarSpin {
+    from {
+        transform: rotate(0deg);
     }
 
-    50% {
-        transform: translate(-50%, -50%) scale(1.1);
-        opacity: 0.8;
+    to {
+        transform: rotate(360deg);
     }
 }
 
 /* Stats Section */
 .stats-section {
     padding: 3rem 0;
-    background: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    background: rgba(15, 23, 42, 0.8);
+    position: relative;
 }
 
 .stats-grid {
@@ -124,21 +165,47 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    position: relative;
+}
+
+/* Stat Corner Accents */
+.stat-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid var(--color-primary);
+    border-left: 2px solid var(--color-primary);
+}
+
+.stat-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid var(--color-primary);
+    border-right: 2px solid var(--color-primary);
 }
 
 .stat-number {
     font-size: 3rem;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-primary);
     font-family: var(--font-display);
+    text-shadow: 0 0 10px rgba(250, 204, 21, 0.3);
 }
 
 .stat-label {
     color: var(--color-text-muted);
-    font-size: 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* Section Styling */
@@ -150,19 +217,20 @@
 .section-title {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: var(--color-heading);
+    text-transform: uppercase;
 }
 
 .section-line {
     width: 100px;
     height: 4px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    background: repeating-linear-gradient(90deg, var(--color-primary), var(--color-primary) 10px, transparent 10px, transparent 20px);
     margin: 0 auto;
-    border-radius: var(--radius-full);
 }
 
 /* Features Section */
 .features-section {
-    background: linear-gradient(135deg, rgba(255, 240, 245, 0.3), rgba(255, 228, 233, 0.3));
+    background: transparent;
 }
 
 .features-grid {
@@ -174,20 +242,29 @@
 .feature-link {
     text-decoration: none;
     color: inherit;
+    display: block;
+    height: 100%;
 }
 
+/* Using global .panel style for features but adding specific overrides if needed */
 .feature-card {
-    text-align: center;
-    position: relative;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    /* Center content vertically */
+    text-align: center;
+    /* Center text horizontally */
+    background: var(--color-surface);
+    /* Ensure background is set */
+    border: 1px solid var(--color-border);
 }
 
 .feature-icon {
     color: var(--color-primary);
     margin-bottom: 1rem;
+    filter: drop-shadow(0 0 5px var(--color-primary));
 }
 
 .feature-card h3 {
@@ -204,20 +281,31 @@
 .feature-arrow {
     margin-top: 1rem;
     color: var(--color-primary);
-    opacity: 0;
-    transform: translateX(-10px);
+    opacity: 0.5;
     transition: all 0.3s ease;
 }
 
 .feature-card:hover .feature-arrow {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(5px);
+    color: var(--color-secondary);
 }
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
-    color: white;
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-secondary) 100%);
+    border-top: 2px solid var(--color-primary);
+    position: relative;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: repeating-linear-gradient(90deg, var(--color-primary), var(--color-primary) 20px, #000 20px, #000 40px);
 }
 
 .cta-container {
@@ -227,15 +315,15 @@
 }
 
 .cta-container h2 {
-    color: white;
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: var(--color-heading);
 }
 
 .cta-container p {
     font-size: 1.125rem;
     margin-bottom: 2rem;
-    opacity: 0.95;
+    color: var(--color-text-muted);
 }
 
 /* Mobile Responsive */
@@ -246,15 +334,13 @@
     }
 
     .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.5rem;
+        font-size: 3rem;
     }
 
     .hero-description {
         margin: 0 auto 2rem;
+        border-left: none;
+        padding-left: 0;
     }
 
     .hero-actions {
@@ -262,15 +348,8 @@
     }
 
     .profile-wrapper {
-        width: 250px;
-        height: 250px;
-    }
-
-    .profile-emoji {
-        font-size: 5rem;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
     }
 }

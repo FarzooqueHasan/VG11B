@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, BookOpen, Languages, Heart, Lightbulb, Mail } from 'lucide-react';
+import { ArrowRight, BookOpen, Languages, Heart, Lightbulb, Mail, Plane, Radio, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
@@ -15,29 +15,28 @@ const Home = () => {
             <section className="hero-section">
                 <div className="container hero-container">
                     <div className="hero-content">
-                        <p className="hero-greeting">Hi, I'm</p>
-                        <h1 className="hero-title">Vrinda Goyal.</h1>
+                        <p className="hero-greeting"><span className="status-indicator"></span> PILOT ID: VG-11B</p>
+                        <h1 className="hero-title">VRINDA GOYAL</h1>
                         <h2 className="hero-subtitle">
-                            Exploring the <span className="text-gradient">Beauty</span> of Languages & Service.
+                            NAVIGATING <span className="text-gradient">LANGUAGES</span> & <span className="text-gradient">SERVICE</span>
                         </h2>
                         <p className="hero-description">
-                            Welcome to my digital space where I share my journey in Language Learning, Social Service,
-                            and Academic Excellence. Building connections through words and making a difference through action.
+                            Flight Log: Recording journey in Linguistics, Social Impact, and Academic Excellence.
+                            Mission: Build connections and deploy positive change.
                         </p>
                         <div className="hero-actions">
                             <Button to="/language" variant="primary" size="lg">
-                                Explore Languages <ArrowRight size={20} />
+                                OPEN COMMS <Radio size={20} style={{ marginLeft: '8px' }} />
                             </Button>
                             <Button to="/social-service" variant="outline" size="lg">
-                                Social Service
+                                SERVICE MISSION
                             </Button>
                         </div>
                     </div>
                     <div className="hero-visual">
                         <div className="profile-wrapper">
-                            <div className="profile-glow"></div>
                             <div className="profile-placeholder">
-                                <span className="profile-emoji">🎀</span>
+                                {/* CSS Radar Animation Effect - No Emoji */}
                             </div>
                         </div>
                     </div>
@@ -47,10 +46,10 @@ const Home = () => {
             {/* Stats Section */}
             <section className="stats-section">
                 <div className="container stats-grid">
-                    <StatItem number="5+" label="Languages Learning" />
-                    <StatItem number="100+" label="Hours of Service" />
-                    <StatItem number="15+" label="Projects Completed" />
-                    <StatItem number="∞" label="Passion" />
+                    <StatItem number="05" label="LANGUAGES LOGGED" />
+                    <StatItem number="100+" label="SERVICE HOURS" />
+                    <StatItem number="15+" label="MISSIONS COMPLETE" />
+                    <StatItem number="MAX" label="THRUST / PASSION" />
                 </div>
             </section>
 
@@ -59,7 +58,7 @@ const Home = () => {
                 <div className="container">
                     <div className="section-header">
                         <h2 className="section-title">
-                            <span className="text-gradient">Daily</span> Inspiration
+                            <span className="text-gradient">MISSION</span> DEBRIEF
                         </h2>
                         <div className="section-line"></div>
                     </div>
@@ -72,33 +71,33 @@ const Home = () => {
                 <div className="container">
                     <div className="section-header">
                         <h2 className="section-title">
-                            What I <span className="text-gradient">Do</span>
+                            FLIGHT <span className="text-gradient">OPERATIONS</span>
                         </h2>
                         <div className="section-line"></div>
                     </div>
                     <div className="features-grid">
                         <FeatureCard
                             icon={Languages}
-                            title="Language"
-                            description="Exploring the beauty of different languages and cultures around the world."
+                            title="COMMS / LANGUAGES"
+                            description="Decoding cultures and bridging gaps through linguistic mastery."
                             link="/language"
                         />
                         <FeatureCard
                             icon={Heart}
-                            title="Social Service"
-                            description="Making a positive impact through community service and volunteer work."
+                            title="SERVICE / RESCUE"
+                            description="Deploying resources and time to aid communities in need."
                             link="/social-service"
                         />
                         <FeatureCard
                             icon={BookOpen}
-                            title="Academics"
-                            description="Deep dives into my academic pursuits and scholarly achievements."
+                            title="FLIGHT SCHOOL"
+                            description="Academic rigor and scholarly pursuits. Pushing the envelope."
                             link="/academics"
                         />
                         <FeatureCard
                             icon={Lightbulb}
-                            title="Insights"
-                            description="Thoughts on learning, growth, and making a difference in the world."
+                            title="INTEL / INSIGHTS"
+                            description="Strategic thoughts on growth, learning, and future trajectories."
                             link="/insights"
                         />
                     </div>
@@ -110,7 +109,7 @@ const Home = () => {
                 <div className="container">
                     <div className="section-header">
                         <h2 className="section-title">
-                            Test Your <span className="text-gradient">Knowledge</span>
+                            SIMULATION <span className="text-gradient">DRILLS</span>
                         </h2>
                         <div className="section-line"></div>
                     </div>
@@ -121,10 +120,10 @@ const Home = () => {
             {/* Contact CTA */}
             <section className="section cta-section">
                 <div className="container cta-container">
-                    <h2>Let's Connect!</h2>
-                    <p>Whether you have a question or just want to say hi, I'd love to hear from you!</p>
+                    <h2>ESTABLISH CONTACT</h2>
+                    <p>Frequency open. Requesting permission to communicate.</p>
                     <Button to="/contact" variant="primary" size="lg">
-                        Say Hello <Mail size={20} />
+                        TRANSMIT MESSAGE <Mail size={20} style={{ marginLeft: '8px' }} />
                     </Button>
                 </div>
             </section>
@@ -134,7 +133,7 @@ const Home = () => {
 
 const FeatureCard = ({ icon, title, description, link }) => (
     <Link to={link} className="feature-link">
-        <Card className="feature-card">
+        <Card className="feature-card panel"> {/* Added panel class for consistency */}
             <AnimatedIcon icon={icon} size={32} className="feature-icon" />
             <h3>{title}</h3>
             <p>{description}</p>

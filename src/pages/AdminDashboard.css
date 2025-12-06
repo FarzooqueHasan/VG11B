@@ -1,0 +1,148 @@
+.admin-dashboard {
+    padding-top: 2rem;
+    min-height: 100vh;
+    color: var(--color-text);
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--color-primary-dim);
+    padding-bottom: 1rem;
+}
+
+.admin-title {
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    font-size: 2rem;
+    text-shadow: 0 0 10px rgba(14, 165, 233, 0.3);
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+}
+
+.post-list-panel {
+    border-right: 1px solid var(--color-border);
+    padding-right: 1rem;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.post-list-item {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid var(--color-border);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: var(--radius-sm);
+}
+
+.post-list-item:hover,
+.post-list-item.active {
+    background: rgba(14, 165, 233, 0.1);
+    border-color: var(--color-primary);
+}
+
+.post-list-item h4 {
+    color: var(--color-heading);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-display);
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.editor-panel {
+    background: rgba(15, 23, 42, 0.6);
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.editor-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.form-control {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid var(--color-border);
+    padding: 0.8rem;
+    color: var(--color-text);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
+}
+
+textarea.form-control {
+    min-height: 200px;
+    resize: vertical;
+}
+
+.editor-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-delete {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    border: 1px solid #f87171;
+}
+
+.btn-delete:hover {
+    background: rgba(239, 68, 68, 0.4);
+}
+
+.category-tag {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+    background: rgba(14, 165, 233, 0.2);
+    color: var(--color-primary);
+    border-radius: 4px;
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .post-list-panel {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+}
